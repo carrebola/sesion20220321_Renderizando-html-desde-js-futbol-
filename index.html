@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Futbol</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<style>
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+			div{
+			             /* border: 1px solid; */
+			             box-sizing: border-box;
+			         }
+			li {
+				list-style: none;
+			}
+			.container-fluid
+
+			}
+			         .container{
+			             width: 600px;
+			         }
+			.col {
+				text-align: center;
+			}
+			h1,
+			h2 {
+				width: 100%;
+				text-align: center;
+			}
+			.escudo {
+				text-align: center;
+			}
+			img {
+				width: 60%;
+			}
+			.centro {
+
+			}
+			         .head1{
+			             display: flex;
+			         }
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="container">
+				<h1>Liga BBVA</h1>
+				<h2>Jornada X</h2>
+				<div class="head1">
+					<div class="col equipo">
+						<h3>Nombre equipo</h3>
+						<div class="escudo">
+							<img
+								src="http://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/3.png"
+								alt=""
+							/>
+						</div>
+					</div>
+					<div class="resultado">
+						<h3>0 - 4</h3>
+					</div>
+					<div class="col equipo">
+						<h3>Nombre equipo</h3>
+						<div class="escudo">
+							<img
+								src="http://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/3.png"
+								alt=""
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="head1 jugadores">
+					<div class="col ">
+						<ul class="">
+							<li
+								class="jugador"
+								data-id="1"
+								data-nombre="Sergio Busquets"
+								data-foto="https://www.fcbarcelona.com/photo-resources/2021/08/17/94b4e263-db26-4f26-9159-f4fd2bab9797/mini_05-SERGIO-BUSQUETS-1A-EQUIPACIO-003.png?width=300&height=354"
+							>
+								Sergio Busquets
+							</li>
+							<li
+								class="jugador"
+								data-id="2"
+								data-nombre="Dani Alves"
+								data-foto="https://www.fcbarcelona.com/photo-resources/2021/11/18/9bc6a4f8-70f3-42e1-b935-9e13eec8ff79/08-dani_alves.png?width=300&height=354"
+							>
+								Dani Alves
+							</li>
+                            <li
+								class="jugador"
+								data-id="2"
+								data-nombre="Dani Alves"
+								data-foto="https://www.fcbarcelona.com/photo-resources/2021/11/18/9bc6a4f8-70f3-42e1-b935-9e13eec8ff79/08-dani_alves.png?width=300&height=354"
+							>
+								Dani Alves
+							</li>
+						</ul>
+					</div>
+					<div class="col futbolista">
+						<h3 class="nombre-jugador">Sergio Busquets</h3>
+						<div class="foto-jugador">
+							<img
+								class="foto-jugador"
+								src="https://www.fcbarcelona.com/photo-resources/2021/08/17/94b4e263-db26-4f26-9159-f4fd2bab9797/mini_05-SERGIO-BUSQUETS-1A-EQUIPACIO-003.png?width=300&height=354"
+								alt=""
+							/>
+						</div>
+
+						<ul class="">
+							<li>2 goles</li>
+							<li>1 tarjeta amarilla</li>
+						</ul>
+					</div>
+					<div class="col">
+						<ul class="">
+							<li
+								class="jugador"
+								data-id="1"
+								data-nombre="Sergio Busquets"
+								data-foto="https://www.fcbarcelona.com/photo-resources/2021/08/17/94b4e263-db26-4f26-9159-f4fd2bab9797/mini_05-SERGIO-BUSQUETS-1A-EQUIPACIO-003.png?width=300&height=354"
+							>
+								Sergio Busquets
+							</li>
+							<li
+								class="jugador"
+								data-id="2"
+								data-nombre="Dani Alves"
+								data-foto="https://www.fcbarcelona.com/photo-resources/2021/11/18/9bc6a4f8-70f3-42e1-b935-9e13eec8ff79/08-dani_alves.png?width=300&height=354"
+							>
+								Dani Alves
+							</li>
+                            <li
+								class="jugador"
+								data-id="2"
+								data-nombre="Dani Alves"
+								data-foto="https://www.fcbarcelona.com/photo-resources/2021/11/18/9bc6a4f8-70f3-42e1-b935-9e13eec8ff79/08-dani_alves.png?width=300&height=354"
+							>
+								Dani Alves
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var jugador = document.querySelector(".jugadores");
+			jugador.addEventListener("click", (elemento) => {
+				var nombre = elemento.target.dataset.nombre;
+				var foto = elemento.target.dataset.foto;
+				if (elemento.target.classList.contains("jugador")) {
+					document.querySelector(".nombre-jugador").innerHTML = nombre;
+
+					document.querySelector(".foto-jugador").innerHTML = `
+                    <img class=""
+							src="${foto}"
+							alt=""
+						/>
+                    `;
+				}
+			});
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
