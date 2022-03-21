@@ -15,11 +15,13 @@ jugador.addEventListener("click", (elemento) => {
 });
 
 //funcion que devuelve un ul con jugadores
-function getJugadores(jornada = 0, partido = 0) {
-	const nombreEquipoLocal =
-		datos.jornadas[jornada].partidos[partido].local.nombre;
-	const nombreEquipoVisitante =
-		datos.jornadas[jornada].partidos[partido].visitante.nombre;
+function getJugadores(equipo = 'local', jornada = 0, partido = 0) {
+	const nombreEquipoLocal = eval(` 
+		datos.jornadas[jornada].partidos[partido].${equipo}.nombre;`)
+
+	const nombreEquipoVisitante = eval(` 
+		datos.jornadas[jornada].partidos[partido].${equipo}.nombre;`)
+
 	const arrayJugadoresLocal =
 		datos.jornadas[jornada].partidos[partido].local.jugadores;
 	const arrayJugadoresVisitante =
